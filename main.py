@@ -8,6 +8,12 @@ from fastapi_utils.cbv import cbv
 from fastapi_utils.inferring_router import InferringRouter
 import bleach
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
+# CORS Configuration
+origins = [
+    "https://my-webiste-six.vercel.app"
+]
 
 smtp_server = os.getenv("SMTP_SERVER")
 smtp_port = os.getenv("SMTP_PORT")
@@ -18,6 +24,14 @@ smtp_password = os.getenv("SMTP_PASSWORD")
 
 app = FastAPI()
 router = InferringRouter()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["POST"],
+    allow_headers=["Content-Type"],
+)
 
 class ContactForm(BaseModel):
     name: constr(max_length=100)
