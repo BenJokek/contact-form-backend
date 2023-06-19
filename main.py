@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # CORS Configuration
 origins = [
-    "https://personal-webiste-gamma.vercel.app/"
+    "https://personal-webiste-gamma.vercel.app"
 ]
 
 smtp_server = os.getenv("SMTP_SERVER")
