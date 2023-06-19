@@ -37,14 +37,6 @@ class FormAPI:
         # You can access the form data using `form_data.name`, `form_data.email`, etc.
         # For example, you can send an email notification using an email service or store the data in a database
 
-        # Configure SMTP server details
-        smtp_server = smtp_server
-        smtp_port = smtp_port
-        sender_email = sender_email
-        receiver_email = receiver_email
-        smtp_username = smtp_username
-        smtp_password = smtp_password
-
         # Create the email message
         message = MIMEMultipart()
         message["From"] = sender_email
