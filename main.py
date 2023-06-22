@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # CORS Configuration
 origins = [
-    "https://personal-webiste-gamma.vercel.app"
+    "https://zambelli.group"
 ]
 
 smtp_server = os.getenv("SMTP_SERVER")
@@ -55,7 +55,7 @@ class FormAPI:
         message = MIMEMultipart()
         message["From"] = sender_email
         message["To"] = receiver_email
-        message["Subject"] = "Contact Form bzambelli.xyz"
+        message["Subject"] = "Contact Form from zambelli.group"
 
         # Construct the email body
         email_body = f"""
